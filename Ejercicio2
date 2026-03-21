@@ -1,0 +1,101 @@
+class Contenido {
+
+  constructor(titulo, genero, anio) {
+
+    this.titulo = titulo;
+
+    this.genero = genero;
+
+    this.anio = anio;
+
+    this.disponible = true;
+
+  }
+ 
+  ficha() {
+
+    return `${this.titulo} - ${this.genero} (${this.anio})`;
+
+  }
+ 
+  retirar() {
+
+    this.disponible = false;
+
+    return `${this.titulo} ha sido retirado`;
+
+  }
+ 
+  estado() {
+
+    return this.disponible ? "Disponible" : "Retirado";
+
+  }
+
+}
+ 
+class Pelicula extends Contenido {
+
+  constructor(titulo, genero, anio, duracion) {
+
+    super(titulo, genero, anio);
+
+    this.duracion = duracion;
+
+  }
+ 
+  duracionFormateada() {
+
+    const horas = Math.floor(this.duracion / 60);
+
+    const minutos = this.duracion % 60;
+
+    return `${horas}h ${minutos}min`;
+
+  }
+ 
+  ficha() {
+
+    return `${super.ficha()} - Duración: ${this.duracionFormateada()}`;
+
+  }
+
+}
+ 
+class Serie extends Contenido {
+
+  constructor(titulo, genero, anio, temporadas) {
+
+    super(titulo, genero, anio);
+
+    this.temporadas = temporadas;
+
+    this.episodiosPorTemporada = 0;
+
+  }
+ 
+  registrarEpisodios(cantidad) {
+
+    this.episodiosPorTemporada = cantidad;
+
+    return `Registrados ${cantidad} episodios por temporada`;
+
+  }
+ 
+  totalEpisodios() {
+
+    return this.temporadas * this.episodiosPorTemporada;
+
+  }
+ 
+  ficha() {
+
+    return `${super.ficha()} - ${this.temporadas} temporadas - ${this.totalEpisodios()} episodios`;
+
+  }
+
+}
+ console.log("\n--- Catálogo completo ---");
+for (let i = 0; i < catalogo.length; i++) {
+  console.log(catalogo[i].ficha());
+}

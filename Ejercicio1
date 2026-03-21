@@ -1,0 +1,129 @@
+//clase empleado
+ 
+class Empleado {
+    constructor(nombre, cargo, salario) {
+        this.nombre = nombre;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.activo = true;
+    }
+ 
+    presentarse() {
+        return `Hola, soy ${this.nombre} y trabajo como ${this.cargo}.`;
+    }
+ 
+    calcularSalarioAnual() {
+        return this.salario * 12;
+    }
+ 
+    desactivar() {
+        this.activo = false;
+        return `${this.nombre} ha sido desactivado.`;
+    }
+ 
+    info() {
+        return `Nombre: ${this.nombre}, Cargo: ${this.cargo}, Salario: ${this.salario}, Activo: ${this.activo}`;
+    }
+}
+ 
+const empleado1 = new Empleado("Nathaly Pulido", "Desarrollador Senior", 950000);
+const empleado2 = new Empleado("Enith vargas", "Desarrollador Full Stack", 650000);
+const empleado3 = new Empleado("Cristian Ceballos", "Analista Backend", 250000);
+ 
+// console.log(empleado1.presentarse(),);
+// console.log(empleado2.presentarse());
+// console.log(empleado3.presentarse());
+ 
+ 
+ 
+class Lider extends Empleado {
+    constructor(nombre, salario, equipo = []) {
+        super(nombre, "Lider de equipo", salario);
+        this.equipo = equipo;
+    }
+ 
+    presentarEquipo() {
+        return `Mi equipo está formado por: ${this.equipo.join(", ")}`;
+    }
+ 
+    agregarMiembro(nombre) {
+    this.equipo.push(nombre);
+    return `${nombre} fue agregado al equipo.`;
+   
+}
+ 
+    info() {
+        return `${super.info()} | Equipo: ${this.equipo.length} personas`;
+    }
+}
+ 
+ 
+//Empleados
+const e1 = new Empleado("Juan", "DevOps", 550000);
+const e2 = new Empleado("Lucia", "UX", 480000);
+const e3 = new Empleado("Diego", "Data Analyst", 620000);
+const e4 = new Empleado("Elena", "Soporte", 400000);
+ 
+// Lideres
+const l1 = new Lider("Andres", 900000, ["Juan", "Lucia"]);
+const l2 = new Lider("Valeria", 950000, ["Diego", "Elena"]);
+ 
+// Array general
+const empleados = [e1, e2, e3, e4, l1, l2];
+ 
+// 1. Costo total mensual
+let costoMensual = 0;
+for (let emp of empleados) {
+    costoMensual += emp.salario;
+}
+ 
+console.log("Costo mensual total:", costoMensual);
+ 
+// 2. Costo anual
+console.log("Costo anual total:", costoMensual * 12);
+ 
+// 3. Desactivar uno
+console.log(e3.desactivar());
+console.log(e3.info());
+ 
+// 4. Info de lideres
+console.log(l1.info());
+console.log(l1.presentarEquipo());
+ 
+console.log(l2.info());
+console.log(l2.presentarEquipo());
+ 
+class Serie extends Contenido {
+
+    constructor(titulo, genero, anio, temporadas) {
+
+        super(titulo, genero, anio);
+
+        this.temporadas = temporadas;
+
+        this.episodiosPorTemporada = 0;
+
+    }
+
+    registrarEpisodios(cantidad) {
+
+        this.episodiosPorTemporada = cantidad;
+
+        return `Se registraron ${cantidad} episodios por temporada.`;
+
+    }
+
+    totalEpisodios() {
+
+        return this.temporadas * this.episodiosPorTemporada;
+
+    }
+
+    ficha() {
+
+        return `${super.ficha()} - ${this.temporadas} temporadas - Total episodios: ${this.totalEpisodios()}`;
+
+    }
+
+}
+ 
