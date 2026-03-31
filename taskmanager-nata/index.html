@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organizador de Tareas (Taller Generation)</title>
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<main class="app">
+  <h1>Nata - Organizador de Tareas</h1>
+
+  <section class="formulario">
+    <input
+      id="texto"
+      type="text"
+      placeholder="Escribe una tarea y presiona Enter"
+      autocomplete="off"
+    >
+
+    <select id="categoria">
+      <option value="">Categoría</option>
+      <option value="💼 Trabajo">💼 Trabajo</option>
+      <option value="📚 Estudio">📚 Estudio</option>
+      <option value="🏠 Personal">🏠 Personal</option>
+      <option value="🔴 Urgente">🔴 Urgente</option>
+      <option value="otra">Otra…</option>
+    </select>
+
+    <input
+      id="otraCategoria"
+      type="text"
+      placeholder="Nueva categoría"
+      hidden
+    >
+
+    <button id="agregar">Agregar</button>
+    <span class="error" id="error"></span>
+  </section>
+
+  <p class="contador">
+    <span id="hechas">0</span> de
+    <span id="total">0</span> tareas completadas
+  </p>
+
+  <ul id="lista"></ul>
+
+  <button class="limpiar" id="limpiar">
+    Limpiar completadas
+  </button>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
