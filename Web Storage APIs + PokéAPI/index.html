@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokédex Favoritos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="app">
+    <h1 class="title">Pokédex</h1>
+
+    <div class="search-box">
+      <input id="pokemonInput" placeholder="Ej: pikachu" />
+      <button id="searchBtn">Buscar</button>
+    </div>
+
+    <section id="result" class="card result"></section>
+
+    <button id="saveBtn" class="save-btn" disabled>
+      Guardar como favorito
+    </button>
+
+    <h2>⭐ Favoritos</h2>
+    <section id="favoritos" class="favorites-grid"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
