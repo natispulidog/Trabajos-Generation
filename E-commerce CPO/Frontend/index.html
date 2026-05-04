@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Café Aroma</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <strong>CAFÉ AROMA</strong>
+    <a href="catalog.html">Tienda</a>
+    <a href="workshops.html">Talleres</a>
+    <a href="farm.html">Finca</a>
+    <a href="cart.html">🛒</a>
+  </div>
+  <div class="nav-right">
+    <span id="userEmail"></span>
+    <button onclick="logout()">Salir</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-box">
+    <h1>Café de origen</h1>
+    <p>Productos, talleres y experiencias cafeteras</p>
+    <a href="catalog.html"><button>Ver tienda</button></a>
+  </div>
+</section>
+
+<script src="js/auth.js"></script>
+<script>
+  const user = JSON.parse(localStorage.getItem("loggedUser"));
+  if (user) document.getElementById("userEmail").innerText = user.email;
+</script>
+
+</body>
+</html>

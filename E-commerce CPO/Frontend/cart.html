@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("loggedUser"));
+  if (!user) {
+    alert("Debes iniciar sesión para acceder al carrito");
+    window.location.href = "login.html";
+  }
+</script>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <strong>CAFÉ AROMA</strong>
+    <a href="catalog.html">Tienda</a>
+    <a href="workshops.html">Talleres</a>
+    <a href="farm.html">Finca</a>
+  </div>
+  <div class="nav-right">
+    <span id="userEmail"></span>
+    <button onclick="logout()">Salir</button>
+  </div>
+</nav>
+
+<div class="cart-container">
+  <h2>🛒 Carrito de compras</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody id="cartBody"></tbody>
+  </table>
+
+  <h3>Total: $<span id="total">0</span></h3>
+</div>
+
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  document.getElementById("userEmail").innerText = user.email;
+  renderCart();
+</script>
+
+</body>
+</html>

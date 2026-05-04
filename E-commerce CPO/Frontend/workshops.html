@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Talleres</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("loggedUser"));
+  if (!user) window.location.href = "login.html";
+</script>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <strong>CAFÉ AROMA</strong>
+    <a href="catalog.html">Tienda</a>
+    <a href="workshops.html">Talleres</a>
+    <a href="farm.html">Finca</a>
+    <a href="cart.html">🛒</a>
+  </div>
+  <div class="nav-right">
+    <span id="userEmail"></span>
+    <button onclick="logout()">Salir</button>
+  </div>
+</nav>
+
+<h2>Talleres</h2>
+<div class="grid" id="workshopList"></div>
+
+<script src="js/cart.js"></script>
+<script src="js/workshops.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  document.getElementById("userEmail").innerText = user.email;
+</script>
+
+</body>
+</html>
