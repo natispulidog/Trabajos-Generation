@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Gagu - Finca</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="image" href="https://fincamargus.com/wp-content/uploads/2025/03/finca-margus-general-5.webp">
+</head>
+
+<body>
+
+<gagu-navbar active="farm"></gagu-navbar>
+
+<section class="farm-hero-section">
+  <div id="farmCarousel" class="carousel slide farm-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#farmCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#farmCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#farmCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://fincamargus.com/wp-content/uploads/2025/03/finca-margus-general-5.webp" class="d-block w-100" alt="Finca Margus general">
+      </div>
+      <div class="carousel-item">
+        <img src="https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/049/818/main/601756286d6a2333429d4e5065324af8.jpeg" class="d-block w-100" alt="Cafetales verdes y paisaje" loading="lazy">
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.travesiasdigital.com/cdn-cgi/image/width=800,height=599,quality=90,format=auto,onerror=redirect/2014/06/img2353.jpg" class="d-block w-100" alt="Vista panorámica de la finca" loading="lazy">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#farmCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#farmCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-6">
+      <div class="p-4 bg-white shadow-lg rounded-4 border-start border-5 border-warning">
+        <h2 class="fw-bold text-primary mb-4">Descubre Nuestra Finca</h2>
+        <p class="lead text-secondary mb-4">
+          Nuestra finca se encuentra ubicada en las majestuosas montañas de <strong>Guaduas, Cundinamarca</strong>, a una altitud privilegiada de <strong>1,850 metros sobre el nivel del mar</strong>.
+        </p>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-seedling text-success fs-4 me-3"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Variedad</h6>
+                <small class="text-muted">Arábica Castillo y Caturra</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-mountain text-primary fs-4 me-3"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Altitud</h6>
+                <small class="text-muted">1,850 MSNM</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-map-marker-alt text-danger fs-4 me-3"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Ubicación</h6>
+                <small class="text-muted">Guaduas, Cundinamarca</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-flask text-warning fs-4 me-3"></i>
+              <div>
+                <h6 class="mb-0 fw-bold">Proceso</h6>
+                <small class="text-muted">Lavado Tradicional</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 text-muted">
+          Contamos con más de 10 hectáreas dedicadas al cultivo sostenible, donde cada grano es seleccionado a mano para garantizar la pureza y el aroma que caracteriza a Café Gagu.
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="p-4 bg-white shadow-lg rounded-4 h-100">
+        <h3 class="fw-bold text-primary mb-4 text-center">Nuestro Proceso</h3>
+        <div class="coffee-process-timeline">
+          <div class="process-step">
+            <div class="step-icon bg-warning"><i class="fas fa-hand-holding-seedling"></i></div>
+            <div class="step-content">
+              <h6 class="fw-bold mb-1">1. Recolección (Cosecha)</h6>
+              <p class="small text-muted mb-0">Seleccionamos manualmente solo los granos más maduros.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-icon bg-warning"><i class="fas fa-water"></i></div>
+            <div class="step-content">
+              <h6 class="fw-bold mb-1">2. Despulpado y Lavado</h6>
+              <p class="small text-muted mb-0">Retiramos la pulpa y lavamos con agua pura de montaña.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-icon bg-warning"><i class="fas fa-sun"></i></div>
+            <div class="step-content">
+              <h6 class="fw-bold mb-1">3. Secado al Sol</h6>
+              <p class="small text-muted mb-0">Secamos los granos naturalmente en patios al aire libre.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-icon bg-warning"><i class="fas fa-fire"></i></div>
+            <div class="step-content">
+              <h6 class="fw-bold mb-1">4. Tostión Artesanal</h6>
+              <p class="small text-muted mb-0">Tostamos en lotes pequeños para resaltar cada aroma.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-icon bg-warning"><i class="fas fa-mug-hot"></i></div>
+            <div class="step-content">
+              <h6 class="fw-bold mb-1">5. Empaque y Disfrute</h6>
+              <p class="small text-muted mb-0">Empacamos frescura directa desde Guaduas a tu mesa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<gagu-footer></gagu-footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/farm.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>
