@@ -1,0 +1,125 @@
+// ======================================
+// 1.1 Clase base: Empleado
+// ======================================
+
+class Empleado {
+    constructor(nombre, cargo, salario) {
+        this.nombre = nombre;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.activo = true;
+    }
+
+    presentarse() {
+        return `Hola, soy ${this.nombre} y trabajo como ${this.cargo}.`;
+    }
+
+    calcularSalarioAnual() {
+        return this.salario * 12;
+    }
+
+    desactivar() {
+        this.activo = false;
+        return `${this.nombre} ha sido desactivado.`;
+    }
+
+    info() {
+        return `Nombre: ${this.nombre}, Cargo: ${this.cargo}, Salario: ${this.salario}, Activo: ${this.activo}`;
+    }
+}
+
+
+// ======================================
+// Checkpoint 1 — Pruebas de Empleado
+// ======================================
+
+const empleado1 = new Empleado("Nathaly Pulido", "Desarrollador Senior", 950000);
+const empleado2 = new Empleado("Enith Vargas", "Desarrollador Full Stack", 650000);
+const empleado3 = new Empleado("Cristian Ceballos", "Analista Backend", 250000);
+
+console.log(empleado1.presentarse());
+console.log(empleado2.presentarse());
+console.log(empleado3.presentarse());
+
+console.log(empleado1.calcularSalarioAnual());
+console.log(empleado2.calcularSalarioAnual());
+console.log(empleado3.calcularSalarioAnual());
+
+console.log(empleado3.desactivar());
+console.log(empleado3.info());
+
+
+// ======================================
+// 1.2 Clase extendida: Lider
+// ======================================
+
+class Lider extends Empleado {
+    constructor(nombre, salario, equipo = []) {
+        super(nombre, "Lider de equipo", salario);
+        this.equipo = equipo;
+    }
+
+    presentarEquipo() {
+        return `Mi equipo está formado por: ${this.equipo.join(", ")}`;
+    }
+
+    agregarMiembro(nombre) {
+        this.equipo.push(nombre);
+        return `${nombre} fue agregado al equipo.`;
+    }
+
+    info() {
+        // sobrescribe info() incluyendo el tamaño del equipo
+        return `${super.info()} | Equipo: ${this.equipo.length} personas`;
+    }
+}
+
+
+// ======================================
+// Checkpoint 2 — Pruebas de Lider
+// ======================================
+
+const lider1 = new Lider("Andres", 900000, ["Juan", "Lucia"]);
+const lider2 = new Lider("Valeria", 950000, ["Diego", "Elena"]);
+
+console.log(lider1.presentarEquipo());
+console.log(lider2.presentarEquipo());
+
+console.log(lider1.agregarMiembro("Carlos"));
+console.log(lider1.presentarEquipo());
+
+console.log(lider1.calcularSalarioAnual()); // heredado
+console.log(lider2.desactivar()); // heredado
+
+
+// ======================================
+// 1.3 Escenario completo
+// ======================================
+
+const e1 = new Empleado("Juan", "DevOps", 550000);
+const e2 = new Empleado("Lucia", "UX", 480000);
+const e3 = new Empleado("Diego", "Data Analyst", 620000);
+const e4 = new Empleado("Elena", "Soporte", 400000);
+
+const l1 = lider1;
+const l2 = lider2;
+
+const empleados = [e1, e2, e3, e4, l1, l2];
+
+// 1. Costo mensual total
+let costoMensual = empleados.reduce((total, emp) => total + emp.salario, 0);
+console.log("Costo mensual total:", costoMensual);
+
+// 2. Costo anual total
+console.log("Costo anual total:", costoMensual * 12);
+
+// 3. Desactivar un empleado
+console.log(e3.desactivar());
+console.log(e3.info());
+
+// 4. Info de líderes
+console.log(l1.info());
+console.log(l1.presentarEquipo());
+
+console.log(l2.info());
+console.log(l2.presentarEquipo());

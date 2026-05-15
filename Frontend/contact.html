@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Gagu - Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<gagu-navbar active="contact"></gagu-navbar>
+
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h2 class="display-4 fw-bold text-primary mb-4">
+      <i class="fas fa-envelope-open-text me-3"></i>Contáctanos
+    </h2>
+    <p class="lead text-muted">Estamos aquí para ayudarte. Envía tus dudas, sugerencias o pedidos y te responderemos lo antes posible.</p>
+  </div>
+
+  <div class="row gx-5 align-items-start mb-5">
+    <div class="col-lg-7">
+      <div class="card contact-card shadow-lg border-0 overflow-hidden">
+        <div class="card-body p-5">
+          <h3 class="contact-form-title mb-4">¿En qué podemos ayudarte?</h3>
+          <div id="contactAlert" class="alert alert-success contact-alert d-none" role="alert">
+            ¡Mensaje enviado! Gracias por escribirnos. Te contactaremos pronto.
+          </div>
+          <form id="contactForm" novalidate>
+            <div class="row gx-3">
+              <div class="col-md-6 mb-3">
+                <label for="name" class="form-label fw-bold">Nombre</label>
+                <input type="text" class="form-control form-control-lg" id="name" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label fw-bold">Correo Electrónico</label>
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="tu@email.com" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label fw-bold">Asunto</label>
+              <input type="text" class="form-control form-control-lg" id="subject" placeholder="Asunto de tu mensaje" required>
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label fw-bold">Mensaje</label>
+              <textarea class="form-control form-control-lg" id="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg contact-action-btn">
+                <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card contact-info-card shadow-lg border-0 p-4 h-100">
+        <div class="mb-4">
+          <h4 class="fw-bold">Atención al cliente</h4>
+          <p class="text-muted mb-0">Nuestro equipo está listo para ayudarte con compras, talleres y consultas generales.</p>
+        </div>
+        <div class="d-grid gap-3">
+          <div class="contact-item p-4 rounded-4 bg-white shadow-sm">
+            <div class="contact-icon-circle bg-primary text-white mb-3">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Ubicación</h5>
+            <p class="text-secondary mb-0">Guaduas, Cundinamarca</p>
+          </div>
+          <div class="contact-item p-4 rounded-4 bg-white shadow-sm">
+            <div class="contact-icon-circle bg-primary text-white mb-3">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Teléfono</h5>
+            <p class="text-secondary mb-0">+57 318 274 2677</p>
+          </div>
+          <div class="contact-item p-4 rounded-4 bg-white shadow-sm">
+            <div class="contact-icon-circle bg-primary text-white mb-3">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h5 class="fw-bold mb-1">Horario</h5>
+            <p class="text-secondary mb-0">Lun - Vie: 8AM - 6PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<gagu-footer></gagu-footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const contactAlert = document.getElementById('contactAlert');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.classList.add('was-validated');
+        return;
+      }
+      contactAlert.classList.remove('d-none');
+      contactForm.reset();
+      setTimeout(() => contactAlert.classList.add('d-none'), 5000);
+    });
+  }
+</script>
+
+</body>
+</html>

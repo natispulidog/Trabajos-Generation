@@ -1,0 +1,34 @@
+/* Estilos generales y de identidad [cite: 18] */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+}
+
+.product-img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Animación/Transición requerida [cite: 24] */
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Animación para nuevos items en el carrito */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.cart-item-animate {
+    animation: fadeIn 0.4s ease-out;
+}

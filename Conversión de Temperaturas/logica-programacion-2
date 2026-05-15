@@ -1,0 +1,55 @@
+(() => {
+  'use strict';
+
+  /**
+   * Solicita al usuario una temperatura válida en grados Celsius
+   * @returns {number} temperatura en Celsius
+   */
+  function solicitarCelsius() {
+    let valor;
+
+    while (true) {
+      const entrada = prompt('Ingrese la temperatura en grados Celsius:');
+      valor = Number(entrada);
+
+      if (!Number.isNaN(valor)) {
+        return valor;
+      }
+
+      alert('❌ Error: Debe ingresar un valor numérico válido.');
+    }
+  }
+
+  /**
+   * Convierte grados Celsius a Kelvin
+   * @param {number} celsius
+   * @returns {number}
+   */
+  function celsiusAKelvin(celsius) {
+    return celsius + 273.15;
+  }
+
+  /**
+   * Convierte grados Celsius a Fahrenheit
+   * @param {number} celsius
+   * @returns {number}
+   */
+  function celsiusAFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+  }
+
+  /**
+   * Programa principal
+   */
+  function main() {
+    const celsius = solicitarCelsius();
+    const kelvin = celsiusAKelvin(celsius);
+    const fahrenheit = celsiusAFahrenheit(celsius);
+
+    console.log(`Grados Kelvin: ${kelvin.toFixed(2)}`);
+    console.log(`Grados Fahrenheit: ${fahrenheit.toFixed(2)}`);
+  }
+
+  // Ejecutar programa
+  main();
+})();
